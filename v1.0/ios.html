@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MYTHS SDK 接入文档 | 目录</title>
+    <meta name="description" content="全球游戏发行商">
+    <link rel="icon" href="/OIDocs/logo.png">
+    
+    <link rel="preload" href="/OIDocs/assets/css/13.styles.232cbde2.css" as="style"><link rel="preload" href="/OIDocs/assets/js/app.665dcb49.js" as="script"><link rel="preload" href="/OIDocs/assets/js/9.ac3544c8.js" as="script"><link rel="prefetch" href="/OIDocs/assets/js/4.c4a657f0.js"><link rel="prefetch" href="/OIDocs/assets/js/0.972f1dbe.js"><link rel="prefetch" href="/OIDocs/assets/js/1.cdee4951.js"><link rel="prefetch" href="/OIDocs/assets/js/2.40af7afb.js"><link rel="prefetch" href="/OIDocs/assets/js/3.d363e8fe.js"><link rel="prefetch" href="/OIDocs/assets/js/5.1df604a5.js"><link rel="prefetch" href="/OIDocs/assets/js/6.89cc0e93.js"><link rel="prefetch" href="/OIDocs/assets/js/7.a185222b.js"><link rel="prefetch" href="/OIDocs/assets/js/8.594abe54.js"><link rel="prefetch" href="/OIDocs/assets/js/10.1b2feade.js"><link rel="prefetch" href="/OIDocs/assets/js/11.e9883471.js"><link rel="prefetch" href="/OIDocs/assets/js/12.98349053.js">
+    <link rel="stylesheet" href="/OIDocs/assets/css/13.styles.232cbde2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/OIDocs/" class="home-link router-link-active"><!----><span class="site-name">
+      MYTHS SDK 接入文档
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/OIDocs/" class="nav-link">Home</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/OIDocs/" class="nav-link">Home</a></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>SDK接入文档 v1.1</span><!----></p><ul class="sidebar-group-items"><li><a href="/OIDocs/v1.1/server.html" class="sidebar-link">Server接入文档</a></li><li><a href="/OIDocs/v1.1/ios.html" class="sidebar-link">iOS接入文档</a></li><li><a href="/OIDocs/v1.1/android.html" class="sidebar-link">Android接入文档</a></li><li><a href="/OIDocs/v1.1/workFlow.html" class="sidebar-link">业务流程</a></li></ul></div></li></ul></div><div class="page"><div class="content"><h2 id="目录"><a href="#目录" aria-hidden="true" class="header-anchor">#</a> 目录</h2><div class="warning custom-block"><p class="custom-block-title">文档适用范围</p><p>此文档仅适用于 <code>&lt;= v1.1.9</code>版本的SDK</p></div><div class="tip custom-block"><p class="custom-block-title">iOS SDK 最新版本</p><p>Version: 1.1.1  <br>
+更新时间： 2018-06-06   <br><a href="/OIDocs/v1.0/ios.html#_1-1-1版本更新内容">更新内容-请点击查看</a></p></div><p></p><div class="table-of-contents"><ul><li><a href="#目录">目录</a></li><li><a href="#sdk接入">SDK接入</a><ul><li><a href="#导入sdk">导入SDK</a></li><li><a href="#sdk初始化、生命周期方法、代理方法实现">SDK初始化、生命周期方法、代理方法实现</a></li><li><a href="#对外接口">对外接口</a><ul><li><a href="#提交角色信息接口">提交角色信息接口</a></li><li><a href="#自动登录">自动登录</a></li><li><a href="#启动支付">启动支付</a></li><li><a href="#显示个人中心">显示个人中心</a></li><li><a href="#显示客服中心">显示客服中心</a></li></ul></li><li><a href="#真机调试、生成ipa文件">真机调试、生成ipa文件</a><ul><li><a href="#p12和mobileprovision文件">p12和mobileprovision文件</a></li><li><a href="#生成ipa文件">生成ipa文件</a></li></ul></li></ul></li><li><a href="#更新日志">更新日志</a><ul><li><a href="#_1-1-1版本更新内容">1.1.1版本更新内容</a></li></ul></li></ul></div><p></p><h2 id="sdk接入"><a href="#sdk接入" aria-hidden="true" class="header-anchor">#</a> SDK接入</h2><h3 id="导入sdk"><a href="#导入sdk" aria-hidden="true" class="header-anchor">#</a> 导入SDK</h3><ul><li><p>将SDK文件夹拖入工程。</p></li><li><p>将<code>GoogleService—info.plist</code>和<code>myths_strings.plist</code>拖入工程根目录</p></li><li><p>点击 <code>TARGETS</code>—&gt; <code>Build Phases</code> —&gt; <code>Link Binary With Libraries</code> 添加以下库:</p><ul><li>AdSupport.framework</li><li>SystemConfiguration.framework</li><li>MobileCoreServices.framework</li><li>CoreTelephony.framework</li><li>libz.tbd</li><li>StoreKit.framework</li><li>Security.framework</li><li>iAd.framework</li><li>AddressBook.framework</li></ul></li><li><p>点击 <code>TARGETS</code>—&gt; <code>Build Settings</code>，搜索 <code>Other Linker Flags</code>，添加<code>-ObjC</code>。</p></li><li><p>点击 <code>PROJECT —&gt; Build Settings</code>，搜索 <code>Other C Flags</code>，添加<code>-DSQLITE_HAS_CODEC</code>。</p></li><li><p>在info.plist中</p><ul><li><p>添加key：<code>FacebookAppID</code>，类型为String，其值参考另行提供的文档。</p></li><li><p>添加key：<code>LSApplicationQueriesSchemes</code>，类型为Array，元素为String，其值可以参考SDK压缩包中提供的info_example.plist。</p></li><li><p>添加key：<code>App Transport Security Settings</code>以允许HTTP请求，配置方式参考SDK压缩包中提供的info_example.plist。</p></li></ul></li><li><p>点击 <em>TARGETS—&gt; Info</em>，在 <em>URL Types</em> 中添加需要配置的项：</p><ul><li>Facebook：参数URL Scheme填写<code>fb</code>+FacebookAppID，如果FacebookAppID为123456789，则此处填写<code>fb123456789</code>。</li></ul><p>以上为可视化添加，也可以在info.plist中配置。</p></li><li><p><code>#import “MythsSDKManager.h</code> 。</p></li></ul><div class="warning custom-block"><p class="custom-block-title">注意事项</p><p>①. SDK使用了SQLCipher加密数据库,工程中无需也不可添加<code>libsqlite3.0.dylib</code>或 <code>libsqlite3.dylib</code>。<br>
+②. 如果项目工程中使用了<code>libcurl.a</code> (使用cocos2dx开发的游戏,大部分会用到该静态库),请将静态库 <code>libcrypto.a</code>从目录<code>MythsSDK/SQLCipher/</code>下删除。</p></div><h3 id="sdk初始化、生命周期方法、代理方法实现"><a href="#sdk初始化、生命周期方法、代理方法实现" aria-hidden="true" class="header-anchor">#</a> SDK初始化、生命周期方法、代理方法实现</h3><div class="language-objectivec extra-class"><pre class="language-objectivec"><code>AppDelegate<span class="token punctuation">.</span>h
+
+	<span class="token macro property">#<span class="token directive keyword">import</span> &lt;UIKit/UIKit.h&gt;</span>
+	<span class="token macro property">#<span class="token directive keyword">import</span> &quot;MythsSDKManager.h&quot;</span>
+
+	<span class="token keyword">@interface</span> AppDelegate <span class="token punctuation">:</span> UIResponder <span class="token operator">&lt;</span>UIApplicationDelegate<span class="token punctuation">,</span> MythsSDKDelegate<span class="token operator">&gt;</span>
+
+	<span class="token keyword">@property</span> <span class="token punctuation">(</span>strong<span class="token punctuation">,</span> nonatomic<span class="token punctuation">)</span> UIWindow <span class="token operator">*</span>window<span class="token punctuation">;</span>
+
+	<span class="token keyword">@end</span>
+
+AppDelegate<span class="token punctuation">.</span>m
+
+	<span class="token macro property">#<span class="token directive keyword">import</span> &quot;AppDelegate.h&quot;</span>
+
+	<span class="token keyword">@implementation</span> AppDelegate
+
+	<span class="token operator">-</span> <span class="token punctuation">(</span>BOOL<span class="token punctuation">)</span>application<span class="token punctuation">:</span><span class="token punctuation">(</span>UIApplication <span class="token operator">*</span><span class="token punctuation">)</span>application didFinishLaunchingWithOptions<span class="token punctuation">:</span> <span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span><span class="token punctuation">)</span>launchOptions <span class="token punctuation">{</span>
+
+		<span class="token keyword">self</span><span class="token punctuation">.</span>window <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>UIWindow alloc<span class="token punctuation">]</span> initWithFrame<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token punctuation">[</span>UIScreen mainScreen<span class="token punctuation">]</span> bounds<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+		<span class="token keyword">self</span><span class="token punctuation">.</span>window<span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> <span class="token punctuation">[</span>UIColor whiteColor<span class="token punctuation">]</span><span class="token punctuation">;</span>
+		<span class="token punctuation">[</span><span class="token keyword">self</span><span class="token punctuation">.</span>window makeKeyAndVisible<span class="token punctuation">]</span><span class="token punctuation">;</span>
+		<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+		<span class="token keyword">self</span><span class="token punctuation">.</span>window<span class="token punctuation">.</span>rootViewController <span class="token operator">=</span> rootVC<span class="token punctuation">;</span>
+
+	<span class="token comment">/* ------------------------------------------------- *\
+		  ------------------ SDK初始化方法 ------------------
+	\* ------------------------------------------------- */</span>
+
+		<span class="token comment">/* 必须调用。
+			* SDK初始化方法。
+			*/</span>
+		<span class="token punctuation">[</span>MythsSDKManager initSDK<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+		<span class="token comment">/* 必须调用。
+			* 设置代理，代理对象需实现协议&lt;MythsSDKDelegate&gt;中的方法。
+			*/</span>
+		<span class="token punctuation">[</span>MythsSDKManager setDelegate<span class="token punctuation">:</span><span class="token keyword">self</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+		<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">/* ------------------------------------------------- *\
+		  ------------------ SDK生命周期方法 ----------------
+	\* ------------------------------------------------- */</span>
+
+	<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>applicationDidEnterBackground<span class="token punctuation">:</span><span class="token punctuation">(</span>UIApplication <span class="token operator">*</span><span class="token punctuation">)</span>application <span class="token punctuation">{</span>
+
+		<span class="token comment">/* 必须调用。
+		 */</span>
+		<span class="token punctuation">[</span>MythsSDKManager applicationDidEnterBackground<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>applicationWillEnterForeground<span class="token punctuation">:</span><span class="token punctuation">(</span>UIApplication <span class="token operator">*</span><span class="token punctuation">)</span>application <span class="token punctuation">{</span>
+
+		<span class="token comment">/* 必须调用。
+		 */</span>
+		<span class="token punctuation">[</span>MythsSDKManager applicationWillEnterForeground<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>applicationDidBecomeActive<span class="token punctuation">:</span><span class="token punctuation">(</span>UIApplication <span class="token operator">*</span><span class="token punctuation">)</span>application <span class="token punctuation">{</span>
+
+		   <span class="token comment">/* 必须调用。
+		    */</span>
+		<span class="token punctuation">[</span>MythsSDKManager applicationDidBecomeActive<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token operator">-</span> <span class="token punctuation">(</span>BOOL<span class="token punctuation">)</span>application<span class="token punctuation">:</span><span class="token punctuation">(</span>UIApplication <span class="token operator">*</span><span class="token punctuation">)</span>application
+				openURL<span class="token punctuation">:</span><span class="token punctuation">(</span>NSURL <span class="token operator">*</span><span class="token punctuation">)</span>url
+	  sourceApplication<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>sourceApplication
+			 annotation<span class="token punctuation">:</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>annotation <span class="token punctuation">{</span>
+
+	    <span class="token comment">/* 必须调用。
+		    */</span>
+	    <span class="token keyword">return</span> <span class="token punctuation">[</span>MythsSDKManager handleOpenURL<span class="token punctuation">:</span>url sourceApplication<span class="token punctuation">:</span>sourceApplication<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+       <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>application<span class="token punctuation">:</span><span class="token punctuation">(</span>UIApplication <span class="token operator">*</span><span class="token punctuation">)</span>application didRegisterForRemoteNotificationsWithDeviceToken<span class="token punctuation">:</span><span class="token punctuation">(</span>NSData <span class="token operator">*</span><span class="token punctuation">)</span>deviceToken
+       <span class="token punctuation">{</span>
+           <span class="token comment">/* 必须调用。
+           */</span>
+           <span class="token punctuation">[</span>MythsSDKManager didRegisterForRemoteNotificationsWithDeviceToken<span class="token punctuation">:</span>deviceToken<span class="token punctuation">]</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+
+
+	<span class="token comment">/* ------------------------------------------------- *\
+	   ------------------- SDK代理方法 -------------------
+	\* ------------------------------------------------- */</span>
+
+	<span class="token macro property">#<span class="token directive keyword">pragma</span> mark - MythsSDKDelegate</span>
+
+	<span class="token comment">/* 必须实现的代理方法。
+	 * 切换账号。此处应实现注销游戏角色、返回登录界面,同时弹出SDK登录窗口（showLoginView）等操作。
+		*/</span>
+	<span class="token operator">-</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>switchUser <span class="token punctuation">{</span>
+
+	    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+		<span class="token punctuation">[</span>MythsSDKManager showLoginView<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">/* 登录成功的代理方法。
+		* 会返回平台userId和token。
+	 */</span>
+	<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>loginDidSuccessWithUserInfo<span class="token punctuation">:</span><span class="token punctuation">(</span>NSDictionary <span class="token operator">*</span><span class="token punctuation">)</span>userInfo <span class="token punctuation">{</span>
+
+	    NSString <span class="token operator">*</span>userId <span class="token operator">=</span> userInfo<span class="token punctuation">[</span><span class="token string">@&quot;userId&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	    NSString <span class="token operator">*</span>token <span class="token operator">=</span> userInfo<span class="token punctuation">[</span><span class="token string">@&quot;token&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">/* 可不实现的代理方法。
+	 * 可以在该方法中处理SDK初始化失败的后续操作，调用Block: retryInit();可以重新初始化SDK。
+	 * 若不实现该方法，则当SDK初始化失败时，SDK会自行弹出重试界面及处理后续逻辑。
+	 */</span>
+	<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>initSdkDidFailWithRetry<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token punctuation">(</span><span class="token operator">^</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>retryInit <span class="token punctuation">{</span>
+
+		<span class="token macro property">#<span class="token directive keyword">error</span> 若不实现该方法，代理对象中不应有此方法（空方法也是一种实现）。</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">/* 可选实现的代理方法。
+
+	 * 调用 `+ (void)startPayWithProductInfo:(nonnull NSString *)gameOrderId gameCoin:(nonnull NSString *)gameCoin roleInfo:(nonnull MythsSDKRoleInfo *)roleInfo gameExt:(NSString *)gameExt` 时才会回调至该方法。
+	 * SDK支付界面已经关闭的代理方法。
+	 * 可以在该方法中刷新游戏界面，以便在游戏内体现充值结果（道具或虚拟货币增加）。
+	 */</span>
+	<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>paymentDidFinish <span class="token punctuation">{</span>
+
+		<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">/* 可选实现的代理方法。
+	 * 调用 `+ (void)buyProductWithIdentifier:(NSString *)productId gameOrderId:(NSString *)gameOrderId roleInfo:(MythsSDKRoleInfo *)roleInfo` 时才会回调至该方法。
+	 */</span>
+	<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>inAppPurchaseDidFinishWithSuccess<span class="token punctuation">:</span><span class="token punctuation">(</span>BOOL<span class="token punctuation">)</span>success
+	<span class="token punctuation">{</span>
+		<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">@end</span>
+</code></pre></div><h3 id="对外接口"><a href="#对外接口" aria-hidden="true" class="header-anchor">#</a> 对外接口</h3><h4 id="提交角色信息接口"><a href="#提交角色信息接口" aria-hidden="true" class="header-anchor">#</a> 提交角色信息接口</h4><div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>someFunction <span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token comment">/*
+     * 角色信息对象生成
+     * roleId:角色ID
+     * roleName:角色名
+     * roleLevel:角色等级
+     * serverId:服务器ID
+     * vipLevel:vip等级
+     * roleCreateTime 角色创建时间
+     */</span>
+     <span class="token punctuation">[</span>MythsSDKRoleInfo roleInfoWithId<span class="token punctuation">:</span><span class="token string">@&quot;9527&quot;</span> roleName<span class="token punctuation">:</span><span class="token string">@&quot;theName&quot;</span> roleLevel<span class="token punctuation">:</span><span class="token string">@&quot;12&quot;</span> serverId<span class="token punctuation">:</span><span class="token string">@&quot;1&quot;</span> vipLevel<span class="token punctuation">:</span><span class="token string">@&quot;2&quot;</span><span class="token punctuation">]</span>
+
+     <span class="token comment">/* 必须调用。
+      * roleInfo角色信息
+      * type (0=创角色 1=进入游戏 2=角色等级升级)
+      * roleCreateTime 角色创建时间
+     */</span>
+     <span class="token punctuation">[</span>MythsSDKManager submitRoleInfo<span class="token punctuation">:</span>roleInfo type<span class="token punctuation">:</span>type roleCreateTime<span class="token punctuation">:</span>roleCreateTime<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">}</span>
+</code></pre></div><h4 id="自动登录"><a href="#自动登录" aria-hidden="true" class="header-anchor">#</a> 自动登录</h4><div class="language-objectivec extra-class"><pre class="language-objectivec"><code>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>someFunction <span class="token punctuation">{</span>
+	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token comment">/* 游戏启动后,调用该方法进行登录。
+    * 若用户之前登录过则会自动登录，否则会弹出登录界面。
+     */</span>
+    <span class="token punctuation">[</span>MythsSDKManager tryAutoLoginElseShowLoginView<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h4 id="启动支付"><a href="#启动支付" aria-hidden="true" class="header-anchor">#</a> 启动支付</h4><p>此接口更新的版本包括： <a href="/OIDocs/v1.0/ios.html#_1-1-1版本更新内容">1.1.1</a></p><div class="warning custom-block"><p class="custom-block-title">注意</p><p><code>支付前置逻辑</code>，由研发自行判断，如当前能否点击支付按钮打开支付，是否有前置商品购买限制等。<br>
+SDK的支付逻辑不包括商品逻辑处理，如<code>月卡</code>、<code>季卡</code>、<code>限购逻辑</code>等，如购买A前需要先购买B商品等等逻辑判断。<br>
+SDK支付实现的仅仅为支付动作。</p></div><div class="language-objectivec extra-class"><pre class="language-objectivec"><code>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>someFunction <span class="token punctuation">{</span>
+    <span class="token comment">/* 调用该方法显示SDK支付中心界面。
+     * gameOrderId:游戏订单ID 必须每次传入的都不相同。
+     * gameCoin:游戏币数量，无则传0
+     * productId: 商品ID
+     * roleInfo:角色信息
+     * gameExt:游戏透传字段
+    */</span>
+    <span class="token punctuation">[</span>MythsSDKManager startPayWithProductInfo<span class="token punctuation">:</span>gameOrderId gameCoin<span class="token punctuation">:</span>gameCoin productId<span class="token punctuation">:</span>productId roleInfo<span class="token punctuation">:</span>roleInfo gameExt<span class="token punctuation">:</span><span class="token string">@&quot;&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h4 id="显示个人中心"><a href="#显示个人中心" aria-hidden="true" class="header-anchor">#</a> 显示个人中心</h4><div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token punctuation">[</span>MythsSDKManager userCenter<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="显示客服中心"><a href="#显示客服中心" aria-hidden="true" class="header-anchor">#</a> 显示客服中心</h4><div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token punctuation">[</span>MythsSDKManager showCustomerService<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="真机调试、生成ipa文件"><a href="#真机调试、生成ipa文件" aria-hidden="true" class="header-anchor">#</a> 真机调试、生成ipa文件</h3><h4 id="p12和mobileprovision文件"><a href="#p12和mobileprovision文件" aria-hidden="true" class="header-anchor">#</a> p12和mobileprovision文件</h4><p>在首次提供SDK时，会提供4个<code>p12</code>文件(包含两个推送p12文件)和3个<code>mobileprovision</code>文件。均双击（使用xcode）安装即可。</p><p>真机调试或打包前需要配置 <code>TARGETS -&gt; Build Settings</code> 中的参数<code>Provisioning Profile</code> 和 <code>Code Signing Identity</code>。</p><p><code>Provisioning Profile</code> 的debug参数选择 <code>(projectName)\_Dev</code><br></p><p><code>Provisioning Profile</code> 的release参数选择 <code>(projectName)\_AdHoc</code><br></p><div class="warning custom-block"><p class="custom-block-title">WARNING</p><p>出<strong>提审包</strong>时需改为 (projectName)_AppStore</p></div><p>分别点击 <code>Code Signing Identify</code> 的 <code>debug</code> 和 <code>release</code> 选择（提示的）与之匹配的 <code>Code Signing Identity</code>。</p><p>设置 <code>TARGETS -&gt; General</code> 中的 <code>Bundle identifier</code> 为平台提供的 BundleId。</p><p>设置 <code>TARGETS —&gt; Capbilities</code> 中将 <code>Push Notifications</code> 设置为 <code>ON</code>，XCode将自动匹配push证书</p><h4 id="生成ipa文件"><a href="#生成ipa文件" aria-hidden="true" class="header-anchor">#</a> 生成ipa文件</h4><p>从Xcode6开始通过 <code>Product -&gt; Archive</code> 打包工程需要使用开发者账号,所以请使用<code>xcodebuild</code> 进行打包。</p><h2 id="更新日志"><a href="#更新日志" aria-hidden="true" class="header-anchor">#</a> 更新日志</h2><table><thead><tr><th>文档版本号</th><th style="text-align:center">更新内容</th><th style="text-align:right">推出时间</th><th style="text-align:right">停用时间</th></tr></thead><tbody><tr><td>1.1.0</td><td style="text-align:center">新增</td><td style="text-align:right">2018-05-30 12:00:00</td><td style="text-align:right">待定</td></tr><tr><td>1.1.1</td><td style="text-align:center"><a href="/OIDocs/v1.0/ios.html#_1-1-1版本更新内容">支付接口参数调整</a></td><td style="text-align:right">2018-06-06 23:00:00</td><td style="text-align:right">待定</td></tr></tbody></table><h3 id="_1-1-1版本更新内容"><a href="#_1-1-1版本更新内容" aria-hidden="true" class="header-anchor">#</a> 1.1.1版本更新内容</h3><ul><li>优化SDK支付模式-接口增加<code>product_id</code>参数</li></ul><p>涉及接口：<a href="/OIDocs/v1.0/ios.html#启动支付">启动支付</a></p><p>之前由于部分地区点卡支付的局限性，导致SDK支付体验交互比较单一，此次更新主要是优化SDK支付模式，解决海外点卡支付导致的体验痛点，满足游戏内对个性化商品的购买需求。</p></div><div class="content edit-link"><!----><!----></div><!----></div></div></div>
+    <script src="/OIDocs/assets/js/9.ac3544c8.js" defer></script><script src="/OIDocs/assets/js/app.665dcb49.js" defer></script>
+  </body>
+</html>

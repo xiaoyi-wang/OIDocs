@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MYTHS SDK 接入文档 | 目录</title>
+    <meta name="description" content="全球游戏发行商">
+    <link rel="icon" href="/OIDocs/logo.png">
+    
+    <link rel="preload" href="/OIDocs/assets/css/13.styles.232cbde2.css" as="style"><link rel="preload" href="/OIDocs/assets/js/app.665dcb49.js" as="script"><link rel="preload" href="/OIDocs/assets/js/4.c4a657f0.js" as="script"><link rel="prefetch" href="/OIDocs/assets/js/0.972f1dbe.js"><link rel="prefetch" href="/OIDocs/assets/js/1.cdee4951.js"><link rel="prefetch" href="/OIDocs/assets/js/2.40af7afb.js"><link rel="prefetch" href="/OIDocs/assets/js/3.d363e8fe.js"><link rel="prefetch" href="/OIDocs/assets/js/5.1df604a5.js"><link rel="prefetch" href="/OIDocs/assets/js/6.89cc0e93.js"><link rel="prefetch" href="/OIDocs/assets/js/7.a185222b.js"><link rel="prefetch" href="/OIDocs/assets/js/8.594abe54.js"><link rel="prefetch" href="/OIDocs/assets/js/9.ac3544c8.js"><link rel="prefetch" href="/OIDocs/assets/js/10.1b2feade.js"><link rel="prefetch" href="/OIDocs/assets/js/11.e9883471.js"><link rel="prefetch" href="/OIDocs/assets/js/12.98349053.js">
+    <link rel="stylesheet" href="/OIDocs/assets/css/13.styles.232cbde2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/OIDocs/" class="home-link router-link-active"><!----><span class="site-name">
+      MYTHS SDK 接入文档
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/OIDocs/" class="nav-link">Home</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/OIDocs/" class="nav-link">Home</a></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>SDK接入文档 v1.1</span><!----></p><ul class="sidebar-group-items"><li><a href="/OIDocs/v1.1/server.html" class="sidebar-link">Server接入文档</a></li><li><a href="/OIDocs/v1.1/ios.html" class="sidebar-link">iOS接入文档</a></li><li><a href="/OIDocs/v1.1/android.html" class="active sidebar-link">Android接入文档</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/OIDocs/v1.1/android.html#目录" class="sidebar-link">目录</a></li><li class="sidebar-sub-header"><a href="/OIDocs/v1.1/android.html#sdk接入" class="sidebar-link">SDK接入</a></li><li class="sidebar-sub-header"><a href="/OIDocs/v1.1/android.html#注意事项" class="sidebar-link">注意事项</a></li><li class="sidebar-sub-header"><a href="/OIDocs/v1.1/android.html#正式包打包说明" class="sidebar-link">正式包打包说明</a></li><li class="sidebar-sub-header"><a href="/OIDocs/v1.1/android.html#更新日志" class="sidebar-link">更新日志</a></li></ul></li><li><a href="/OIDocs/v1.1/workFlow.html" class="sidebar-link">业务流程</a></li></ul></div></li></ul></div><div class="page"><div class="content"><h2 id="目录"><a href="#目录" aria-hidden="true" class="header-anchor">#</a> 目录</h2><div class="tip custom-block"><p class="custom-block-title">Android SDK 最新版本</p><p>Version: 1.1.6  <br>
+更新时间： 2018-08-08    <br><a href="/OIDocs/v1.1/android.html#_1-1-6版本更新内容">更新日志-请点击查看</a></p></div><p></p><div class="table-of-contents"><ul><li><a href="#目录">目录</a></li><li><a href="#sdk接入">SDK接入</a><ul><li><a href="#运行环境">运行环境</a></li><li><a href="#添加sdk所需依赖">添加sdk所需依赖</a></li><li><a href="#对外暴露接口">对外暴露接口</a><ul><li><a href="#初始化">初始化</a></li><li><a href="#自动登录">自动登录</a></li><li><a href="#登录接口-呼出登录界面">登录接口 呼出登录界面</a></li><li><a href="#对sdk默认配置进行修改">对SDK默认配置进行修改</a></li><li><a href="#打开个人中心">打开个人中心</a></li><li><a href="#打开客服中心">打开客服中心</a></li><li><a href="#提交角色数据">提交角色数据</a></li><li><a href="#启动支付">启动支付</a></li><li><a href="#activity-onactivityresult">activity onActivityResult</a></li><li><a href="#activity-onsaveinstancestate">activity onSaveInstanceState</a></li><li><a href="#onbackpressed">onBackPressed</a></li><li><a href="#activity中生命周期方法">Activity中生命周期方法</a></li></ul></li><li><a href="#接入实例参考">接入实例参考</a><ul><li><a href="#初始化准备">初始化准备</a></li><li><a href="#游戏角色数据提交添加">游戏角色数据提交添加</a></li><li><a href="#添加生命周期方法">添加生命周期方法</a></li><li><a href="#游戏支付功能的实现">游戏支付功能的实现</a></li><li><a href="#自动登录">自动登录</a></li><li><a href="#展示登录界面">展示登录界面</a></li></ul></li></ul></li><li><a href="#注意事项">注意事项</a><ul><li><a href="#openssl版本">openSSL版本</a></li></ul></li><li><a href="#正式包打包说明">正式包打包说明</a></li><li><a href="#更新日志">更新日志</a><ul><li><a href="#_1-1-2版本更新内容">1.1.2版本更新内容</a></li><li><a href="#_1-1-3版本更新内容">1.1.3版本更新内容</a></li><li><a href="#_1-1-4版本更新内容">1.1.4版本更新内容</a></li><li><a href="#_1-1-6版本更新内容">1.1.6版本更新内容</a></li></ul></li></ul></div><p></p><h2 id="sdk接入"><a href="#sdk接入" aria-hidden="true" class="header-anchor">#</a> SDK接入</h2><h3 id="运行环境"><a href="#运行环境" aria-hidden="true" class="header-anchor">#</a> 运行环境</h3><p>此版本sdk 要求android sdk版本为19或者以上, 适用于android studio IDE</p><h3 id="添加sdk所需依赖"><a href="#添加sdk所需依赖" aria-hidden="true" class="header-anchor">#</a> 添加sdk所需依赖</h3><div class="tip custom-block"><p class="custom-block-title">sdkBase最新版本</p><p>com.myths.sdkbase:sdkBase: {最新sdkBase版本}</p></div><ul><li><p>修改<code>根目录</code>下的<code>build.gradle</code>文件</p><ul><li><p>在<code>allprojects</code>属性中加入<code>jecnter</code>和<code>google</code>的地址</p></li><li><p><code>buildscript</code>增加依赖 <code>classpath 'com.google.gms:google-services:3.2.0'</code></p><div class="language-java extra-class"><pre class="language-java"><code><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+buildscript <span class="token punctuation">{</span>
+    dependencies <span class="token punctuation">{</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+        classpath <span class="token string">'com.google.gms:google-services:3.2.0'</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+allprojects <span class="token punctuation">{</span>
+    repositories <span class="token punctuation">{</span>
+        <span class="token function">jcenter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        maven <span class="token punctuation">{</span>
+            url <span class="token string">'https://maven.google.com/'</span>
+            name <span class="token string">'Google'</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>参考图</p><p><img src="/OIDocs/assets/img/1.410139c9.png" alt="Markdown"></p></li></ul></li><li><p>修改<code>游戏主工程</code>面的<code>build.gradle</code>文件</p><ul><li><p>加入sdk依赖 <code>compile '{最新sdkBase版本}'</code>;</p></li><li><p>末尾加入<code>apply plugin: 'com.google.gms.google-services'</code> 。</p></li></ul><p>示例</p><div class="language-java extra-class"><pre class="language-java"><code><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+dependencies <span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    compile <span class="token string">'com.myths.sdkbase:sdkBase:1.1.6'</span>
+<span class="token punctuation">}</span>
+apply plugin<span class="token operator">:</span> <span class="token string">'com.google.gms.google-services'</span>
+</code></pre></div><p>参考图</p><p><img src="/OIDocs/assets/img/2.0f869c6a.png" alt="Markdown"></p></li><li><p>将sdk提供的<code>google-services.json</code>放入<code>游戏工程根目录</code>下</p><p><img src="/OIDocs/assets/img/4.0a03bb35.png" alt="Markdown"></p></li><li><p>将游戏的包名，<code>versionName</code>，<code>versionCode</code>换成我方提供的,在<code>参数.txt</code>文件中提供</p><p><img src="/OIDocs/assets/img/5.8ebfead2.png" alt="Markdown"></p></li><li><p>游戏的签名请使用sdk提供的证书，在<code>证书.zip</code>文件中解压得到</p><p><img src="/OIDocs/assets/img/6.2e6d2458.png" alt="Markdown"></p></li><li><p>将sdk提供的<code>drawable-xxhdpi</code>目录下面的资源文件复制到<code>游戏主工程</code>的<code>drawable-xxhdpi</code>目录下</p></li><li><p>将sdk提供的<code>myths_strings.xml(test_myths_strings.xml</code> 连接的是我方sdk测试服，供对接测试时使用)拷贝到游戏工程<code>res/values</code>文件夹下</p></li><li><p>如果游戏无Application则直接声明Manifest中Application的name为<code>com.myths.MythsGamesApplication</code>，否则让游戏的Application继承于<code>com.myths.MythsGamesApplication</code>，<br>
+如果游戏Application已继承其他application，则在游戏中的自定义Application的onCreate方法中调用<code>MythsGamesApplication.applicationOnCreate()</code>方法，<br>
+在<code>attachBaseContext()</code>方法中调用<code>MythsGamesApplication.applicationAttachBaseContext()</code>方法</p></li></ul><div class="warning custom-block"><p class="custom-block-title">WARNING</p><p>1.确保配置为参数文档中的最新参数 <br>
+2.测试时把test_pocket_strings.xml放置游戏工程res/values文件夹下，连接的是测试服。出正式包的时候请使用<code>pocket\_strings.xml</code>替换<code>test\_pocket\_strings.xml</code></p></div><h3 id="对外暴露接口"><a href="#对外暴露接口" aria-hidden="true" class="header-anchor">#</a> 对外暴露接口</h3><h4 id="初始化"><a href="#初始化" aria-hidden="true" class="header-anchor">#</a> 初始化</h4><div class="language-java extra-class"><div class="highlight-lines"><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-java"><code><span class="token comment">/**
+* 初始化sdk方法
+* @param context    依附context
+* @param callBack     初始化回调
+* @param isNeedPackage  true 游戏需要伪装 false 正常进入游戏
+* @return      返回sdk实例对象
+    */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">initSDK</span><span class="token punctuation">(</span>Activity context<span class="token punctuation">,</span>InitCallBack callBack<span class="token punctuation">)</span>
+
+<span class="token comment">//使用实例</span>
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">initSDK</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">InitCallBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">//游戏接入必调</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">initSuccess</span><span class="token punctuation">(</span><span class="token keyword">boolean</span> isNeedPackage<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">// 判断是否需要伪装（若无相关逻辑，可忽略此参数）</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>isNeedPackage<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">// TODO 展示伪装内容</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+
+        <span class="token punctuation">}</span>
+
+        Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;初始化成功 &quot;</span><span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">doAutoLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">initFail</span><span class="token punctuation">(</span>String msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;初始化失败 &quot;</span> <span class="token operator">+</span> msg<span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doSwitch</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//当SDK发起账号切换时回调，研发在此做切换账号时游戏的处理和调用我方openLogin接口</span>
+        <span class="token function">doLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="自动登录"><a href="#自动登录" aria-hidden="true" class="header-anchor">#</a> 自动登录</h4><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">/**
+ * 自动登录
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">autoLogin</span><span class="token punctuation">(</span>Activity context<span class="token punctuation">,</span>LoginCallBack callBack<span class="token punctuation">)</span>
+
+<span class="token comment">//使用实例</span>
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">autoLogin</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">LoginCallBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">//游戏接入必调</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">loginSuccess</span><span class="token punctuation">(</span>String token<span class="token punctuation">,</span>UserInfo info<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;自动登录成功 token == &quot;</span> <span class="token operator">+</span> token<span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">loginFail</span><span class="token punctuation">(</span>String msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;自动登录失败 msg == &quot;</span> <span class="token operator">+</span> msg<span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="登录接口-呼出登录界面"><a href="#登录接口-呼出登录界面" aria-hidden="true" class="header-anchor">#</a> 登录接口 呼出登录界面</h4><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">/**
+ * 登录接口，呼出登录界面
+ * @param context
+ * @param callBack 登录完成之后回调
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">openLogin</span><span class="token punctuation">(</span>Activity context<span class="token punctuation">,</span>LoginCallBack callBack<span class="token punctuation">)</span>；
+
+<span class="token comment">//使用实例</span>
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">openLogin</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">LoginCallBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">//游戏接入必调</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">loginSuccess</span><span class="token punctuation">(</span>String token<span class="token punctuation">,</span>UserInfo info<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;登录成功 token == &quot;</span> <span class="token operator">+</span> token<span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">loginFail</span><span class="token punctuation">(</span>String msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;登录失败 msg == &quot;</span> <span class="token operator">+</span> msg<span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="对sdk默认配置进行修改"><a href="#对sdk默认配置进行修改" aria-hidden="true" class="header-anchor">#</a> 对SDK默认配置进行修改</h4><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">/**
+ * 对sdk默认配置进行修改
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">modifySdkConfig</span><span class="token punctuation">(</span>MythsSDKConfig sdkConfig<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//使用实例</span>
+MythsSDKConfig sdkConfig <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MythsSDKConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//开启sdk悬浮窗口</span>
+sdkConfig<span class="token punctuation">.</span>isShowFloat <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">modifySdkConfig</span><span class="token punctuation">(</span>sdkConfig<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//本方法请在sdk初始化方法 initSDK 之前调用</span>
+</code></pre></div><h4 id="打开个人中心"><a href="#打开个人中心" aria-hidden="true" class="header-anchor">#</a> 打开个人中心</h4><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">/**
+ * 打开个人中心
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">openAccountCenter</span><span class="token punctuation">(</span>Activity context<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//使用实例</span>
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">openAccountCenter</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="打开客服中心"><a href="#打开客服中心" aria-hidden="true" class="header-anchor">#</a> 打开客服中心</h4><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">/**
+ * 打开客服中心
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">openCustomerCenter</span><span class="token punctuation">(</span>Activity context<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//使用实例</span>
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">openCustomerCenter</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="提交角色数据"><a href="#提交角色数据" aria-hidden="true" class="header-anchor">#</a> 提交角色数据</h4><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">/**
+ * 提交角色数据 请保证下面的参数都传入, 参数不能为null
+ * @param operator (0=创角色 1=进入游戏 2=角色等级升级)
+ * @param gameRoleBean
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">submitRoleData</span><span class="token punctuation">(</span><span class="token keyword">int</span> operator<span class="token punctuation">,</span> GameRoleBean gameRoleBean<span class="token punctuation">)</span>；
+
+<span class="token comment">//使用实例</span>
+GameRoleBean gameRoleBean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GameRoleBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setGameZoneId</span><span class="token punctuation">(</span><span class="token string">&quot;1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setRoleId</span><span class="token punctuation">(</span><span class="token string">&quot;123&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setRoleName</span><span class="token punctuation">(</span><span class="token string">&quot;xxx&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setLevel</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setCreateRoleTime</span><span class="token punctuation">(</span><span class="token string">&quot;2018-01-01 12:10:10&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setVipLevel</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">submitRoleData</span><span class="token punctuation">(</span>GameRoleBean<span class="token punctuation">.</span>CREATE_ROLE<span class="token punctuation">,</span> gameRoleBean<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//游戏接入必调</span>
+</code></pre></div><h4 id="启动支付"><a href="#启动支付" aria-hidden="true" class="header-anchor">#</a> 启动支付</h4><div class="warning custom-block"><p class="custom-block-title">注意</p><p><code>支付前置逻辑</code>，由研发自行判断，如当前能否点击支付按钮打开支付，是否有前置商品购买限制等。<br>
+SDK的支付逻辑不包括商品逻辑处理，如<code>月卡</code>、<code>季卡</code>、<code>限购逻辑</code>等，如购买A前需要先购买B商品等等逻辑判断。<br>
+SDK支付实现的仅仅为支付动作。</p></div><div class="language-java extra-class"><pre class="language-java"><code>
+<span class="token comment">/**
+ * 启动支付
+ * @param context
+ * @param callBack 支付完成之后回调
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">startPay</span><span class="token punctuation">(</span>Activity context<span class="token punctuation">,</span> GameRoleBean bean<span class="token punctuation">,</span>PayCallBack callBack<span class="token punctuation">)</span>；
+
+<span class="token comment">//使用实例</span>
+Random random <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+GameRoleBean gameRoleBean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GameRoleBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setGameZoneId</span><span class="token punctuation">(</span><span class="token string">&quot;1001&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//游戏区服id</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setRoleId</span><span class="token punctuation">(</span><span class="token string">&quot;12551&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//游戏角色id</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setRoleName</span><span class="token punctuation">(</span><span class="token string">&quot;xxxx&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setLevel</span><span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//游戏角色等级</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setVipLevel</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setGameExt</span><span class="token punctuation">(</span><span class="token string">&quot;test&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+String gameCoin <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>EditText<span class="token punctuation">)</span><span class="token function">findViewById</span><span class="token punctuation">(</span>ResourceUtil<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;pay_money&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setGameCoin</span><span class="token punctuation">(</span>Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>gameCoin<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token operator">?</span><span class="token string">&quot;50&quot;</span><span class="token operator">:</span>gameCoin<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 1.0.6版本新增参数</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setProductId</span><span class="token punctuation">(</span><span class="token string">&quot;product_4.99_duelgt_gp&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//游戏订单id(全局唯一）</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setGameOrderId</span><span class="token punctuation">(</span>String<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//游戏接入必调</span>
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">startPay</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> gameRoleBean<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">PayCallBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//PayCallBack是玩家关闭支付界面时会回调paySuccess(),在paySuccess中游戏做刷新玩家订单信息操作，</span>
+    <span class="token comment">//有时由于网络原因，延迟到账发货，因此，一般每隔一段时间查询一次，建议查询三次以上</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">payFinish</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;支付成功&quot;</span><span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">payFail</span><span class="token punctuation">(</span>String msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;支付失败：&quot;</span> <span class="token operator">+</span> msg<span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><h4 id="activity-onactivityresult"><a href="#activity-onactivityresult" aria-hidden="true" class="header-anchor">#</a> activity onActivityResult</h4><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">/**
+ * activity onActivityResult
+ * 在游戏Activity的onActivityResult方法中调用
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">onActivityResult</span><span class="token punctuation">(</span><span class="token keyword">int</span> requestCode<span class="token punctuation">,</span><span class="token keyword">int</span> resultCode<span class="token punctuation">,</span>Intent data<span class="token punctuation">)</span>；
+
+<span class="token comment">//使用实例</span>
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">onActivityResult</span><span class="token punctuation">(</span>requestCode<span class="token punctuation">,</span>resultCode<span class="token punctuation">,</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="activity-onsaveinstancestate"><a href="#activity-onsaveinstancestate" aria-hidden="true" class="header-anchor">#</a> activity onSaveInstanceState</h4><div class="tip custom-block"><p class="custom-block-title">TIP</p><p>activity onSaveInstanceState google登录需要用到</p></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">/**
+ * 在游戏Activity的onSaveInstanceState方法中调用
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">onSaveInstanceState</span><span class="token punctuation">(</span>Bundle outState<span class="token punctuation">)</span>；
+
+<span class="token comment">//使用方式</span>
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">onSaveInstanceState</span><span class="token punctuation">(</span>outState<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><h4 id="onbackpressed"><a href="#onbackpressed" aria-hidden="true" class="header-anchor">#</a> onBackPressed</h4><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">/**
+ * 在游戏Activity中的onBackPressed方法中调用,注意：要去掉super.onBackPressed();
+ * @param context
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">onBackPressed</span><span class="token punctuation">(</span>Activity context<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//使用实例：</span>
+<span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onBackPressed</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    MythsSDKApi<span class="token punctuation">.</span><span class="token function">onBackPressed</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="activity中生命周期方法"><a href="#activity中生命周期方法" aria-hidden="true" class="header-anchor">#</a> Activity中生命周期方法</h4><div class="language-java extra-class"><pre class="language-java"><code>
+<span class="token comment">//Activity中生命周期方法</span>
+
+<span class="token comment">/**
+ * activity onResume
+ * 在游戏Activity的onResume方法中调用
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">onResume</span><span class="token punctuation">(</span><span class="token punctuation">)</span>；
+
+<span class="token comment">//使用实例</span>
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">onResume</span><span class="token punctuation">(</span><span class="token punctuation">)</span>；
+
+<span class="token comment">/**
+ * activity onPause
+ * 在游戏Activity 的onPause()方法中调用
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">onPause</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//使用实例</span>
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">onPause</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * activity onDestroy
+ * 在游戏Activity的onDestroy（）方法中调用
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">onDestory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//使用实例</span>
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">onDestory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><h3 id="接入实例参考"><a href="#接入实例参考" aria-hidden="true" class="header-anchor">#</a> 接入实例参考</h3><div class="warning custom-block"><p class="custom-block-title">WARNING</p><p>①接入需按照下面的流程步骤，顺序展开 <br>
+②在SDK登录成功并进入游戏后，需要调用submitRoleData接口
+<code>MythsSDKApi.submitRoleData(GameRoleBean.CREATE_ROLE, gameRoleBean);</code></p></div><h4 id="初始化准备"><a href="#初始化准备" aria-hidden="true" class="header-anchor">#</a> 初始化准备</h4><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">/**
+* 初始化sdk方法
+* @param context    依附context
+* @param callBack     初始化回调
+* @param isNeedPackage  true 游戏需要伪装 false 正常进入游戏
+* @return      返回sdk实例对象
+ */</span>
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">initSDK</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">InitCallBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">//游戏接入必调</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">initSuccess</span><span class="token punctuation">(</span><span class="token keyword">boolean</span> isNeedPackage<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;初始化成功 &quot;</span><span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">doAutoLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//在此做SDK的自动登录和游戏的其他操作</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">initFail</span><span class="token punctuation">(</span>String msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;初始化失败 &quot;</span> <span class="token operator">+</span> msg<span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doSwitch</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">doLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//切换账号</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><h4 id="游戏角色数据提交添加"><a href="#游戏角色数据提交添加" aria-hidden="true" class="header-anchor">#</a> 游戏角色数据提交添加</h4><div class="warning custom-block"><p class="custom-block-title">WARNING</p><p>务必在登录SDK成功之后，（创角，角色等级变化，每次进入游戏）调用该接口，保证数据正常，请保证下面的参数都传入,参数不能为null</p></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//使用实例</span>
+GameRoleBean gameRoleBean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GameRoleBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setGameZoneId</span><span class="token punctuation">(</span><span class="token string">&quot;1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setRoleId</span><span class="token punctuation">(</span><span class="token string">&quot;123&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setRoleName</span><span class="token punctuation">(</span><span class="token string">&quot;xxx&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setLevel</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setCreateRoleTime</span><span class="token punctuation">(</span><span class="token string">&quot;2018-01-01 12:10:10&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setVipLevel</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">submitRoleData</span><span class="token punctuation">(</span>GameRoleBean<span class="token punctuation">.</span>CREATE_ROLE<span class="token punctuation">,</span> gameRoleBean<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//游戏接入必调</span>
+</code></pre></div><h4 id="添加生命周期方法"><a href="#添加生命周期方法" aria-hidden="true" class="header-anchor">#</a> 添加生命周期方法</h4><div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onResume</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onResume</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    MythsSDKApi<span class="token punctuation">.</span><span class="token function">onResume</span><span class="token punctuation">(</span><span class="token punctuation">)</span>；
+<span class="token punctuation">}</span>
+
+<span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onPause</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onPause</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    MythsSDKApi<span class="token punctuation">.</span><span class="token function">onPause</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onDestroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onDestroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    MythsSDKApi<span class="token punctuation">.</span><span class="token function">onDestory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onBackPressed</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    MythsSDKApi<span class="token punctuation">.</span><span class="token function">onBackPressed</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token annotation punctuation">@Override</span>
+<span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">onSaveInstanceState</span><span class="token punctuation">(</span>Bundle outState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onSaveInstanceState</span><span class="token punctuation">(</span>outState<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    MythsSDKApi<span class="token punctuation">.</span><span class="token function">onSaveInstanceState</span><span class="token punctuation">(</span>outState<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token annotation punctuation">@Override</span>
+<span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">onActivityResult</span><span class="token punctuation">(</span><span class="token keyword">int</span> requestCode<span class="token punctuation">,</span> <span class="token keyword">int</span> resultCode<span class="token punctuation">,</span> Intent data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onActivityResult</span><span class="token punctuation">(</span>requestCode<span class="token punctuation">,</span> resultCode<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    MythsSDKApi<span class="token punctuation">.</span><span class="token function">onActivityResult</span><span class="token punctuation">(</span>requestCode<span class="token punctuation">,</span>resultCode<span class="token punctuation">,</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onRequestPermissionsResult</span><span class="token punctuation">(</span><span class="token keyword">int</span> requestCode<span class="token punctuation">,</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> permissions<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> grantResults<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onRequestPermissionsResult</span><span class="token punctuation">(</span>requestCode<span class="token punctuation">,</span> permissions<span class="token punctuation">,</span> grantResults<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    MythsSDKApi<span class="token punctuation">.</span><span class="token function">onRequestPermissionsResult</span><span class="token punctuation">(</span>requestCode<span class="token punctuation">,</span> permissions<span class="token punctuation">,</span> grantResults<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h4 id="游戏支付功能的实现"><a href="#游戏支付功能的实现" aria-hidden="true" class="header-anchor">#</a> 游戏支付功能的实现</h4><div class="warning custom-block"><p class="custom-block-title">WARNING</p><p>每次调用该接口，游戏订单id都需要是一个全新且唯一的值。该值有游戏Server产生。</p></div><div class="language-java extra-class"><pre class="language-java"><code>
+<span class="token comment">/**
+ * 启动支付
+ * @param context
+ * @param callBack 支付完成之后回调
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">startPay</span><span class="token punctuation">(</span>Activity context<span class="token punctuation">,</span> GameRoleBean bean<span class="token punctuation">,</span>PayCallBack callBack<span class="token punctuation">)</span>；
+
+<span class="token comment">/***
+ * 完整实例
+ */</span>
+Random random <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+GameRoleBean gameRoleBean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GameRoleBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setGameZoneId</span><span class="token punctuation">(</span><span class="token string">&quot;100011&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//游戏区服id</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setRoleId</span><span class="token punctuation">(</span><span class="token string">&quot;111111&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//游戏角色id</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setRoleName</span><span class="token punctuation">(</span><span class="token string">&quot;xx&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setLevel</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//游戏角色等级</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setVipLevel</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setGameExt</span><span class="token punctuation">(</span><span class="token string">&quot;test&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+String gameCoin <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>EditText<span class="token punctuation">)</span><span class="token function">findViewById</span><span class="token punctuation">(</span>ResourceUtil<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;pay_money&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setGameCoin</span><span class="token punctuation">(</span>Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>gameCoin<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token operator">?</span><span class="token string">&quot;50&quot;</span><span class="token operator">:</span>gameCoin<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setProductId</span><span class="token punctuation">(</span><span class="token string">&quot;product_4.99_duelgt_gp&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 游戏订单id(全局唯一)</span>
+gameRoleBean<span class="token punctuation">.</span><span class="token function">setGameOrderId</span><span class="token punctuation">(</span>String<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token operator">/</span>
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">startPay</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> gameRoleBean<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">PayCallBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">//游戏接入必调</span>
+    <span class="token comment">// PayCallBack是玩家关闭支付界面时会回调paySuccess(),在paySuccess中游戏做刷新玩家订单信息操作，</span>
+    <span class="token comment">// 有时由于网络原因，延迟到账发货，因此，一般每隔一段时间查询一次，建议查询三次以上</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">payFinish</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;支付成功&quot;</span><span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">payFail</span><span class="token punctuation">(</span>String msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;支付失败：&quot;</span> <span class="token operator">+</span> msg<span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><h4 id="自动登录-2"><a href="#自动登录-2" aria-hidden="true" class="header-anchor">#</a> 自动登录</h4><div class="warning custom-block"><p class="custom-block-title">WARNING</p><p>一定要在SDK初始化完成之后调用</p></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">// 自动登录</span>
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">autoLogin</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">LoginCallBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">//在游戏初始化完成之后调用</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">loginSuccess</span><span class="token punctuation">(</span>String token<span class="token punctuation">,</span>UserInfo info<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;自动登录成功 token == &quot;</span> <span class="token operator">+</span> token<span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">loginFail</span><span class="token punctuation">(</span>String msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;自动登录失败 msg == &quot;</span> <span class="token operator">+</span> msg<span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="展示登录界面"><a href="#展示登录界面" aria-hidden="true" class="header-anchor">#</a> 展示登录界面</h4><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//在切换账号收到回调之后或者游戏内点击切换账号之后调用</span>
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">openLogin</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">LoginCallBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">loginSuccess</span><span class="token punctuation">(</span>String token<span class="token punctuation">,</span>UserInfo info<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;登录成功 token == &quot;</span> <span class="token operator">+</span> token<span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">loginFail</span><span class="token punctuation">(</span>String msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;登录失败 msg == &quot;</span> <span class="token operator">+</span> msg<span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><h2 id="注意事项"><a href="#注意事项" aria-hidden="true" class="header-anchor">#</a> 注意事项</h2><h3 id="openssl版本"><a href="#openssl版本" aria-hidden="true" class="header-anchor">#</a> openSSL版本</h3><p><a href="https://support.google.com/faqs/answer/6376725?hl=zh-Hans" target="_blank" rel="noopener noreferrer">Google 官方说明<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p><p>如果开发者发布的应用静态链接到 1.02f/1.01r 之前任意版本的 OpenSSL，这些版本存在安全漏洞。</p><p>请尽快将您的应用迁移至 <code>OpenSSL 1.02f/1.01r</code> 或更高版本，并增加升级版 APK 的版本号。</p><p>后续步骤：</p><ol><li><p>将您的应用迁移至 OpenSSL 1.02f/1.01r 或更高版本，并增加版本号。</p></li><li><p>登录 Developer Console 并提交应用的更新版本。</p></li><li><p>过 5 个小时后再回来查看。如果应用未正确更新，系统将会显示相应的警告消息</p></li></ol><p>这些漏洞已在 OpenSSL 1.02f/1.01r 中得以修复。点击<a href="https://www.openssl.org/source" target="_blank" rel="noopener noreferrer">此处<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 即可下载最新版 OpenSSL。要确认您的 OpenSSL 版本，您可以执行 grep 搜索命令 <code>($ unzip -p YourApp.apk | strings | grep &quot;OpenSSL&quot;)</code>。</p><p>如果您使用的第三方库捆绑了 OpenSSL，则需要将其升级到捆绑 OpenSSL 1.02f/1.01r 或更高版本的版本。</p><h2 id="正式包打包说明"><a href="#正式包打包说明" aria-hidden="true" class="header-anchor">#</a> 正式包打包说明</h2><p><strong>测试包</strong>使用<code>test_myths_strings.xml</code>放入游戏工程的<code>res/values</code>文件夹中<br><strong>正式包</strong>使用<code>myths_strings.xml</code>文件替换<code>test_myths_strings.xml</code></p><h2 id="更新日志"><a href="#更新日志" aria-hidden="true" class="header-anchor">#</a> 更新日志</h2><table><thead><tr><th>文档版本号</th><th style="text-align:center">更新内容</th><th style="text-align:right">推出时间</th><th style="text-align:right">停用时间</th></tr></thead><tbody><tr><td>1.1.2</td><td style="text-align:center">新增</td><td style="text-align:right">2018-07-05</td><td style="text-align:right">待定</td></tr><tr><td>1.1.3</td><td style="text-align:center">增加打点日志上报；增加支付打开方式，用浏览器打开；优化支付订单逻辑；</td><td style="text-align:right">2018-07-16</td><td style="text-align:right">待定</td></tr><tr><td>1.1.4</td><td style="text-align:center">修复BUG</td><td style="text-align:right">2018-07-16</td><td style="text-align:right">待定</td></tr><tr><td>1.1.6</td><td style="text-align:center">优化GP支付逻辑，初始化时增加是否显示伪装内容的标识</td><td style="text-align:right">2018-08-08</td><td style="text-align:right">待定</td></tr></tbody></table><h3 id="_1-1-2版本更新内容"><a href="#_1-1-2版本更新内容" aria-hidden="true" class="header-anchor">#</a> 1.1.2版本更新内容</h3><p>配合SDK Server做调整</p><h3 id="_1-1-3版本更新内容"><a href="#_1-1-3版本更新内容" aria-hidden="true" class="header-anchor">#</a> 1.1.3版本更新内容</h3><ul><li><p>增加打点日志上报；</p></li><li><p>增加支付打开方式，</p></li><li><p>用浏览器打开；优化支付订单逻辑；</p></li><li><p>优化SDK打点</p></li></ul><h3 id="_1-1-4版本更新内容"><a href="#_1-1-4版本更新内容" aria-hidden="true" class="header-anchor">#</a> 1.1.4版本更新内容</h3><ul><li>修复第三方支付BUG</li></ul><h3 id="_1-1-6版本更新内容"><a href="#_1-1-6版本更新内容" aria-hidden="true" class="header-anchor">#</a> 1.1.6版本更新内容</h3><ul><li>初始化SDK成功回调方法，增加伪装标识参数<code>isNeedPackage</code>，游戏方可根据此标识进行游戏内容的切换处理。</li></ul><div class="language-java extra-class"><div class="highlight-lines"><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-java"><code><span class="token comment">/**
+* 初始化sdk方法
+* @param context    依附context
+* @param callBack     初始化回调
+* @param isNeedPackage  true 游戏需要伪装 false 正常进入游戏
+* @return      返回sdk实例对象
+    */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">initSDK</span><span class="token punctuation">(</span>Activity context<span class="token punctuation">,</span>InitCallBack callBack<span class="token punctuation">)</span>
+
+<span class="token comment">//使用实例</span>
+MythsSDKApi<span class="token punctuation">.</span><span class="token function">initSDK</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">InitCallBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">//游戏接入必调</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">initSuccess</span><span class="token punctuation">(</span><span class="token keyword">boolean</span> isNeedPackage<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">// 判断是否需要伪装</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>isNeedPackage<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">// TODO 展示伪装内容</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+
+        <span class="token punctuation">}</span>
+
+        Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;初始化成功 &quot;</span><span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">doAutoLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">initFail</span><span class="token punctuation">(</span>String msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;初始化失败 &quot;</span> <span class="token operator">+</span> msg<span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doSwitch</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//当SDK发起账号切换时回调，研发在此做切换账号时游戏的处理和调用我方openLogin接口</span>
+        <span class="token function">doLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div></div><div class="content edit-link"><!----><!----></div><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/OIDocs/v1.1/ios.html" class="prev">
+          iOS接入文档
+        </a></span><span class="next"><a href="/OIDocs/v1.1/workFlow.html">
+          业务流程
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/OIDocs/assets/js/4.c4a657f0.js" defer></script><script src="/OIDocs/assets/js/app.665dcb49.js" defer></script>
+  </body>
+</html>
